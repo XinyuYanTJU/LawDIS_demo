@@ -34,7 +34,7 @@ This repo contains the source code and prediction results of our paper [_LawDIS:
 
 > This project is still a work in progress, and we invite all to contribute to making it more accessible and useful. If you have any questions about our paper, feel free to contact me via e-mail (xinyuyan@tju.edu.cn). If you are using our code for your research, please cite this paper ([BibTeX](#4-citation)).
 
-## 3. Proposed Framework
+## ♟️3. Proposed Framework
 <table align="center">
   <tr>
     <td align="center" valign="top" >
@@ -103,35 +103,35 @@ cp lawdis_diffusers/* diffusers/models/autoencoders/
 Modify the following files in the `diffusers` package to include the new model:
 
 - `diffusers/models/autoencoders/__init__.py`  
-  Add at line **17**:
+  Add at line **9**:
   ```python
   from .autoencoder_kl_lawdis import AutoencoderKlLawDIS
   ```
 
 - `diffusers/models/__init__.py`  
-  Add at line **33**:
+  Add at line **31**:
   ```python
   _import_structure["autoencoders.autoencoder_kl_lawdis"] = ["AutoencoderKlLawDIS"] 
   ```  
-  And at line **120**:
+  And at line **82**:
   ```python
   AutoencoderKlLawDIS,
   ```
 
 - `diffusers/__init__.py`  
-  Add at line **149**:
+  Add at line **82**:
   ```python
   "AutoencoderKlLawDIS",
   ```
   
-  And at line **764**:
+  And at line **546**:
   ```python
   AutoencoderKlLawDIS,
   ```
 ### 4.3. Inference
 #### ✅ Step 1. Download the Checkpoints
 
-Download the pre-trained checkpoints (access code: `2023`) from Baidu Netdisk.  
+Download the pre-trained [checkpoints](https://pan.baidu.com/s/1DGqK_Nl3ccv_pi4mIOMndw) (access code: `2025`) from Baidu Netdisk.  
 Place the checkpoint files under:
 
 ```bash
@@ -190,7 +190,10 @@ Update the `--checkpoint`, `--input_img_path`, `--init_seg_dir`, `--output_dir`,
 ```bash
 bash run_infer_micro_single.sh
 ```
-## 🏋️ Results
+## 🏋️ 5. Results
+
+The [predicted segmentation maps](https://pan.baidu.com/s/1em-6dEh2Qr2si17zi-CCxg) (access code: `lawd`) of both **Macro** and **Micro** modes can be downloaded from Baidu Netdisk.
+
 <p align="center">
     <img src="imgs/4.png"/> <br />
     <em> 
@@ -205,7 +208,7 @@ bash run_infer_micro_single.sh
     </em>
 </p>
 
-## 🎮 Applications
+## 🎮 6. Applications
 Due to its capability of achieving high-precision segmentation of foreground objects at high resolutions, our LawDIS enables extensive application across a variety of scenarios. Fig. 6 shows application cases of background removal. As can be seen, compared with the original image, the background-removed image shows higher aesthetic values and good usability, which can even be directly used as: 3D modeling, augmented reality (AR), and still image animation.
 <div align="center">
   <table>
@@ -241,7 +244,7 @@ Due to its capability of achieving high-precision segmentation of foreground obj
     </em>
 </p>
 
-## ✏️ Related work
+## 📦 7. Related work
 Our code is based on 
 
 - Marigold: Repurposing Diffusion-Based Image Generators for Monocular Depth Estimation, [Github](https://github.com/prs-eth/marigold)
@@ -250,11 +253,11 @@ Our code is based on
 
 We are grateful to the authors of these projects for their pioneering work and contributions!
 
-## To do
-- Training code on the way...
-- Huggingface app demo on the way...
+## ✏️ 8. To do
+- [ ] Training code; 
+- [ ] Huggingface app demo.
 
-## Citations
+## 🎓 9. Citations
 If you find this code useful, we kindly ask you to cite our paper in your work.
 ```
 @article{LawDIS,
